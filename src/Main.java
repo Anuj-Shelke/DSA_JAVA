@@ -1,25 +1,26 @@
-//Program to search for the element in range 1,4 ;
+//Program to search for the minimum element ;
 import java.util.*;
 public class Main{
     public static void main(String[] args){
-        System.out.println("Enter the element to search in the array ");
-        Scanner sc = new Scanner(System.in);
-        int element = sc.nextInt();
-        int [] arr = {1,2,3,4,5,6,7,8,9};
-        int result = search(arr,element);
-        System.out.println("The array element "+element+" is found at index : "+result);
+
+
+        int [] arr = {1,2,3,4,-1,6,7,8,9};
+        search_min(arr);
 
     }
-    static int search(int[] arr, int target ){
+    static void search_min(int[] arr ){
+        int min = 0 ;
         if(arr.length == 0 ){
-            return -1;
+            System.out.println("The Array is empty ");
         }
-        for(int i = 1 ; i< arr[4]; i++ ){
-            if(arr[i] == target){
-                return i;
+        for(int i = 1 ; i< arr.length; i++ ){
+
+            if(min > arr[i]){
+                min = arr[i];
             }
 
         }
-        return -1;
+        System.out.println("The min element of the array is "+min);
+
     }
 }
