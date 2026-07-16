@@ -1,26 +1,24 @@
-//Program to search for the minimum element ;
+//Program to search for an element in an 2D Array  ;
 import java.util.*;
 public class Main{
     public static void main(String[] args){
 
 
-        int [] arr = {1,2,3,4,-1,6,7,8,9};
-        search_min(arr);
-
+        int[][] arr = {{1,2,3},
+                       {5,6,7},
+                       {9,10,11}};
+        int element = 10 ;
+        int[] result = search(arr,element);
+        System.out.println("The element is found at index "+Arrays.toString(result));
     }
-    static void search_min(int[] arr ){
-        int min = 0 ;
-        if(arr.length == 0 ){
-            System.out.println("The Array is empty ");
-        }
-        for(int i = 1 ; i< arr.length; i++ ){
-
-            if(min > arr[i]){
-                min = arr[i];
+    static int[] search(int[][] arr , int element ){
+        for (int row = 0 ; row <arr.length; row++ ){
+            for(int coln = 0 ; coln < arr[row].length; coln++){
+                if(arr[row][coln] == element ){
+                    return new int[]{row,coln};
+                }
             }
-
         }
-        System.out.println("The min element of the array is "+min);
-
+return new int[]{-1,-1};
     }
 }
