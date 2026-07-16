@@ -1,4 +1,4 @@
-//Program for linear search of elements ;
+//Program to search for the element in range 1,4 ;
 import java.util.*;
 public class Main{
     public static void main(String[] args){
@@ -14,7 +14,7 @@ public class Main{
         if(arr.length == 0 ){
             return -1;
         }
-        for(int i = 0 ; i< arr.length; i++ ){
+        for(int i = 1 ; i< arr[4]; i++ ){
             if(arr[i] == target){
                 return i;
             }
