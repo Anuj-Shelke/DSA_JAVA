@@ -1,25 +1,17 @@
-import javax.swing.*;
-import java.sql.SQLOutput;
-import java.util.*;
-//Swap Array elements at a particular index
+//Program to find Maximum Element in an array
+import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
-        int []arr = {1,2,3,4,5};
-        int temp;
-        System.out.println("Enter the number to swap ");
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println("Enter the index at which you want to swap with ");
-        int m  = sc.nextInt();
+        int [] arr = {1,2,10,7,5,6};
+        int max = 0 ;
+        for(int i = 0 ; i< 5 ; i++ ){
 
-        for(int i = 0 ; i < 5 ; i++){
-            temp = arr[n];
-            arr[n] = arr[m];
-            arr[m] = temp;
+            if(max< arr[i+1]){
+                max = arr[i];
+            }
 
         }
-        System.out.println(Arrays.toString(arr));
-
+        System.out.println("The Maximum element of the array is "+max);
 
     }
 }
