@@ -1,24 +1,28 @@
-//Program to search for an element in an 2D Array  ;
 import java.util.*;
 public class Main{
     public static void main(String[] args){
-
-
-        int[][] arr = {{1,2,3},
-                       {5,6,7},
-                       {9,10,11}};
-        int element = 10 ;
-        int[] result = search(arr,element);
-        System.out.println("The element is found at index "+Arrays.toString(result));
+        int[] arr = {1,2,3,4,5,6,7,8,9};
+        int target = 3;
+        int result=  binary_search(arr, target) ;
+        System.out.println("The element is found at index : "+result);
     }
-    static int[] search(int[][] arr , int element ){
-        for (int row = 0 ; row <arr.length; row++ ){
-            for(int coln = 0 ; coln < arr[row].length; coln++){
-                if(arr[row][coln] == element ){
-                    return new int[]{row,coln};
-                }
+    static int  binary_search(int[] arr, int target){
+        int start = 0;
+        int end = arr.length-1;
+
+        while(start <= end){
+            int mid = start+(end-start)/2;
+            if(arr[mid]< target ){
+                start = mid+1;
+            }
+            else if(arr[mid]>target){
+                end = mid-1;
+            }
+            else{
+                return mid ;
             }
         }
-return new int[]{-1,-1};
+        return -1;
+
     }
 }
