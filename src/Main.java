@@ -1,45 +1,26 @@
-//Code for Order_Agnostic Binary Search ;
 import java.util.*;
 public class Main{
     public static void main(String[] args){
-//        int[] arr = {1,2,3,4,5,6,7,8,9};
-        int[] arr= {9,8,7,6,5,4,3,2,1};
-        int target = 9;
-        int result=  binary_search(arr, target) ;
-        System.out.println("The element is found at index : "+result);
+        int[] arr = {1,4,3,5,6,2,9,2};
+        bubblesort(arr);
+        System.out.println(Arrays.toString(arr));
+
     }
-    static int  binary_search(int[] arr, int target){
-        int start = 0;
-        int end = arr.length-1;
-        boolean isascending = (arr[start] < arr[end]);
+    static void bubblesort(int[] arr){
+        for(int i =0 ; i < arr.length; i++){
+            boolean swapped = false ;
+            for(int j =  1; j< arr.length-i ; j++){
+                if(arr[j]<arr[j-1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
+                    swapped = true ;
 
-
-        while(start <= end){
-
-            int mid = start+(end-start)/2;
-            if(arr[mid] == target){
-                return mid ;
-            }
-            if(isascending) {
-                if (arr[mid] < target) {
-                    start = mid + 1;
-                } else
-                {
-                    end = mid - 1;
                 }
             }
-            else{
-                if (arr[mid] > target) {
-                    start = mid + 1;
-                } else
-                {
-                    end = mid - 1;
-                }
-
+            if(!swapped ){
+                break;
             }
-
         }
-        return -1;
-
     }
 }
