@@ -1,26 +1,25 @@
 import java.util.*;
 public class Main{
     public static void main(String[] args){
-        int[] arr = {1,4,3,5,6,2,9,2};
-        bubblesort(arr);
+        int [] arr = {1,5,4,3,2};
+        cyclic_sort(arr);
         System.out.println(Arrays.toString(arr));
-
     }
-    static void bubblesort(int[] arr){
-        for(int i =0 ; i < arr.length; i++){
-            boolean swapped = false ;
-            for(int j =  1; j< arr.length-i ; j++){
-                if(arr[j]<arr[j-1]){
-                    int temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
-                    swapped = true ;
-
-                }
+    static void cyclic_sort(int[] arr){
+        int i = 0;
+        while(i < arr.length ) {
+            int correct = arr[i] - 1;
+            if(arr[i] != arr[correct]){
+                swap(arr,i,correct);
             }
-            if(!swapped ){
-                break;
+            else{
+                i++;
             }
         }
+    }
+    static void swap(int[] arr, int first , int second){
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
     }
 }
