@@ -1,35 +1,13 @@
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
-        int[] arr ={1,3,2,5,2};
-        int result = cyclic_sort(arr);
-        System.out.println(Arrays.toString(arr));
-        System.out.println(result );
-
-
-    }
-    static int cyclic_sort(int[] arr){
-        int i = 0 ;
-        while(i < arr.length){
-            int correct = arr[i]-1;
-            if(arr[correct]!=arr[i]){
-                swap(arr,i,correct);
-            }
-            else {
-                if (i!=correct ) {
-                    return arr[i];
-                }
-                i++;
-            }
-
-
+        System.out.println("Enter the number you want to print the table of ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i = 10; i >0  ; i--){
+            System.out.println("the reverse table of "+n+"*"+i+" = "+i*n);
         }
-        return -1;
-    }
-    static void swap(int[] arr, int first, int second){
-        int temp = arr[first] ;
-        arr[first ]= arr[second];
-        arr[second] = temp;
+
     }
 }
