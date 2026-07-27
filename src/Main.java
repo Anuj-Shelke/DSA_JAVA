@@ -1,12 +1,12 @@
-//Program for Printing Star Pattern No 3 ;
+//Program for Printing Numbered Pattern No 4 ;
 public class Main{
     public static void main(String[] args){
         pattern2(5);
     }
     public static void pattern2(int n){
-        for(int row = n ; row >0  ; row--){
-            for(int coln = 0 ; coln < row ; coln++){
-                System.out.print("*");
+        for(int row = 0 ; row <=n; row++){
+            for(int coln = 1 ; coln <= row ; coln++){
+                System.out.print(coln);
             }
             System.out.println();
         }
