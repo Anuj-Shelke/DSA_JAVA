@@ -1,13 +1,20 @@
-import java.util.Scanner;
-
+//Program for Printing Star Pattern..............
 public class Main{
     public static void main(String[] args){
-        System.out.println("Enter the number you want to print the table of ");
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        for(int i = 10; i >0  ; i--){
-            System.out.println("the reverse table of "+n+"*"+i+" = "+i*n);
-        }
+        String str = "Nitin";
 
+    }
+    public static boolean pali(String str){
+        if(str.isEmpty()){
+            return true;
+        }
+        for(int i = 0 ; i< str.length()*0.50; i++){
+            char start = str.charAt(0);
+            char end = str.charAt(str.length()-1-i);
+            if(start != end){
+                return false;
+            }
+        }
+        return true; 
     }
 }
