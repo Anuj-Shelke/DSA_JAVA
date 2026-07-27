@@ -1,24 +1,15 @@
-//Program for Printing Numbered Pattern No 4 ;
-public class Main{
-    public static void main(String[] args){
-        pattern2(5);
-        pattern3(4);
+//Program For demonstrating Recursion ;
 
+public class Main {
+    public static void main(String[] args) {
+       int result =  fabonacci(4 );
+        System.out.println(result);
     }
-    public static void pattern2(int n){
-        for(int row = 0 ; row <=n; row++){
-            for(int coln = 1 ; coln <= row ; coln++){
-                System.out.print("*");
-            }
-            System.out.println();
+    public static int  fabonacci(int n){
+        if(n < 2){
+            return n ;
         }
-    }
-    public static void pattern3(int n){
-        for(int row =n ; row >0 ; row--){
-            for(int coln = 1 ; coln <= row ; coln++){
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+        return fabonacci(n-2)+fabonacci(n-1);
+
     }
 }
