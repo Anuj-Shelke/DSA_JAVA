@@ -1,17 +1,14 @@
-import java.util.Scanner;
-
-//Code to print the Result of power and base   ;
+import java.util.*;
 public class Main{
-    public static void main(String[] args){
-        System.out.println("Enter the value of base ");
+    public static void main(String[] args ){
+        System.out.println("Enter a number to reverse : \n");
         Scanner sc = new Scanner(System.in);
-        int base = sc.nextInt() ;
-        System.out.println("Enter the value of power ");
-        int power = sc.nextInt();
-        int result = 1;
-        for(int i = 0 ; i < power ; i++){
-            result  = result * base ;
+        int num = sc.nextInt();
+        int digit = 0;
+        while(num > 0){
+            digit = (digit*10)+(num%10);
+            num = (num/10);
         }
-        System.out.println("The result is "+result);
+        System.out.println("The reverse of the number "+digit);
     }
 }
