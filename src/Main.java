@@ -1,20 +1,16 @@
-//Program to Enter Base and power and enter their result  ;
-import java.util.*;
-public class Main {
-    public static void main(String[] args) {
-        int count = 0;
-        int temp = 1;
-        System.out.println("Enter base ");
+import java.util.Scanner;
+
+//Code to print factors of a given number ;
+public class Main{
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int base = sc.nextInt();
-        System.out.println("Enter power ");
-        int power = sc.nextInt();
-        while(count != power){
-            temp = temp *base ;
-            count++;
+        System.out.println("Enter number to know the factor of ");
+        int n = sc.nextInt();
+        for(int i = 1 ; i< n ; i++){
+            if(n%i ==0 ){
+                System.out.printf("%d\n",i);
+            }
 
         }
-        System.out.printf("The result is %d",temp);
     }
-
 }
