@@ -1,15 +1,15 @@
 //Program For demonstrating Recursion ;
-
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
-       int result =  fabonacci(4 );
-        System.out.println(result);
-    }
-    public static int  fabonacci(int n){
-        if(n < 2){
-            return n ;
+        System.out.println("Enter number to reverse ");
+        int temp= 0 ;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        while(n!= 0 ){
+            temp = temp*10+(n%10);
+            n = n/10;
         }
-        return fabonacci(n-2)+fabonacci(n-1);
-
+        System.out.println("The reverse of the number is "+temp);
     }
 }
