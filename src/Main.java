@@ -3,15 +3,15 @@ import java.util.*;
 public class Main{
 
     public static void main(String[] args ) {
-        int result = fact(5);
-        System.out.println("The factorial of number is "+result);
+        int result = sum(2);
+        System.out.println("The Sum of given natural number is :  "+result);
     }
 
-    static int  fact(int n ){
+    static int  sum(int n ){
         if(n==1){
             return 1 ;
         }
-         return n * fact(n-1);
+         return n + sum(n-1);
 
 
 
