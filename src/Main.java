@@ -1,29 +1,43 @@
-import java.util.*;
-//Code to Print sum of digits of a number No recursion approach first  ;
 public class Main{
+    public static class Node{
+        int value;
+        Node next ;
+        public Node(int value){
+            this.value = value;
+        }
 
-    public static void main(String[] args ) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter number to add digits of ");
-        int num = sc.nextInt();
-        int num2 = num ;
-        int r = 0;
+    }
+    public static class linked_list{
+        Node head;
+        Node tail;
+        int size ;
+        void insert_first(int value){
+            Node node = new Node(value);
+            node.next = head;
+            head = node ;
+            if(tail == null){
+                tail = head;
+            }
 
-        while(num >  0) {
-            r =r + (num%10);
-            System.out.println("The digits are "+r);
-            num  = num/10;
+            size++;
 
         }
-        int r1 = 0 ;
-        System.out.println("The addition of the digits is "+r);
-        while(num2 > 0) {
-            r1 = r1 * 10 + (num2 % 10);
-            num2 = num2/10;
-
+        void display(){
+            Node temp = head;
+            while(temp !=null) {
+                System.out.println(temp.value);
+                temp = temp.next ;
+            }
         }
-        System.out.println("The reverse of the digit is "+r1);
+
+    }
+    public static void main(String[] args){
+        linked_list list = new linked_list() ;
+        list.insert_first(2);
+        list.insert_first(3);
+        list.display();
 
 
     }
+
 }
