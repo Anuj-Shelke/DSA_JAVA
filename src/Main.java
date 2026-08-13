@@ -1,43 +1,90 @@
 public class Main{
     public static class Node{
-        int value;
-        Node next ;
+        int value ;
+        Node next;
+
         public Node(int value){
             this.value = value;
+
         }
+
 
     }
-    public static class linked_list{
-        Node head;
+    public static class LL{
+        static Node head;
+        static int size;
         Node tail;
-        int size ;
-        void insert_first(int value){
-            Node node = new Node(value);
-            node.next = head;
-            head = node ;
-            if(tail == null){
-                tail = head;
-            }
+        Node temp;
+         public void Insert_first(int value){
+             Node node = new Node(value);
+             node.next = head;
+             if(tail == null){
+                 tail = node;
+                 size++;
+             }
+             head = node;
 
-            size++;
 
-        }
-        void display(){
-            Node temp = head;
-            while(temp !=null) {
-                System.out.println(temp.value);
-                temp = temp.next ;
-            }
-        }
 
+         }
+         public void insert(int value, int index){
+             if(index == 1){
+                 Insert_first(value);
+                 return ;
+             }
+             if(index == size){
+                 Insert_last(value);
+                 return ;
+             }
+             Node temp = head;
+             for(int i =0  ;i < index-1 ; i++){
+                 temp = temp.next;
+
+             }
+             Node node = new Node(value);
+             node.next = temp.next;
+             temp.next = node;
+
+
+         }
+         public void Insert_last(int value){
+
+             Node node = new Node(value);
+             Node temp = node ;
+             if(head == null){
+                 Insert_first(value);
+                 size++;
+             }
+             tail.next =  temp;
+             tail = temp;
+
+
+
+
+         }
+         public void display(){
+             temp = head;
+             while(temp != null){
+                 System.out.println(temp.value);
+                 temp = temp.next;
+             }
+
+         }
     }
     public static void main(String[] args){
-        linked_list list = new linked_list() ;
-        list.insert_first(2);
-        list.insert_first(3);
-        list.display();
+        LL linked_list = new LL();
+        linked_list.Insert_first(1);
+        linked_list.Insert_first(8);linked_list.Insert_first(1);
+        linked_list.Insert_first(1);
+        linked_list.Insert_first(1);
+        linked_list.Insert_last(3);
+        linked_list.insert(99,2);
+
+        linked_list.display();
+
+
+
 
 
     }
-
 }
