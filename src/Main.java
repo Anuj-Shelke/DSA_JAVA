@@ -69,6 +69,24 @@ public class Main{
                  temp = temp.next;
              }
 
+
+         }
+         public int delete_first(){
+             head = head.next;
+             return head.value;
+         }
+         public void delete_last(){
+             Node temp = head ;
+             while(temp.next != tail){
+                 temp = temp.next;
+             }
+             temp.next = null;
+             tail = temp;
+
+
+
+
+
          }
     }
     public static void main(String[] args){
@@ -79,8 +97,14 @@ public class Main{
         linked_list.Insert_first(1);
         linked_list.Insert_last(3);
         linked_list.insert(99,2);
-
         linked_list.display();
+        int value = linked_list.delete_first();
+        System.out.println("The element deleted is "+value);
+        linked_list.display();
+        System.out.println("After deleting the last element the Array becomes ");
+        linked_list.delete_last();
+        linked_list.display();
+
 
 
 
