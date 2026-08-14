@@ -1,37 +1,23 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//412. Fizz Buzz LeetCode
+// 1929. Concatenation of Array LeetCode
 public class Main{
-    public static ArrayList<String> fizz(int num){
-        ArrayList<String> ans = new ArrayList<>();
-        ArrayList<String> ans1 = new ArrayList<>();
-
-
-        for(int i = 1 ; i <= num ; i++){
-            if(i%5==0 && i%3==0){
-                ans.add("FizzBuzz");
-            }
-            else if(i%3==0){
-                ans.add("Fizz");
-            }
-            else if(i%5==0){
-                ans.add("Buzz");
-            }
-            else{
-                ans.add(String.valueOf(i));
-            }
-            ans1 = ans;
+    public int[] getConcatenation(int[] nums){
+        int []arr = new int[nums.length*2];
+        for(int i = 0 ; i < nums.length ; i++){
+            arr[i] = nums[i];
+            arr[i+nums.length] = nums[i];
         }
-        return ans1;
-
+        return arr;
     }
     public static void main(String[] args){
-        System.out.println("Enter the number to test ");
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        ArrayList<String> fizz_out = new ArrayList<>();
-        fizz_out = fizz(num);
-        System.out.println(fizz_out);
+        Main g1 = new Main();
+        int arr[]={1,2,3,4,5,6,7};
+        int arr1[] = g1.getConcatenation(arr);
+        for(int i = 0 ; i < arr1.length ; i++){
+            System.out.println(arr1[i]);
+        }
+
     }
 }
