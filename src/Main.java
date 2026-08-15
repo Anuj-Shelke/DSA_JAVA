@@ -1,18 +1,18 @@
-//704. Binary Search
+//26. Remove Duplicates from Sorted Array
 public class Main {
-    public int search(int[] nums, int target) {
-        int start=0;
-        int end=nums.length-1;
-        while(start<=end){
-            int mid=start+(end-start)/2;
-            if(nums[mid]==target){
-                return mid;
-            }else if(target<nums[mid]){
-                end=mid-1;
-            }else{
-                start=mid+1;
+    public static int removeDuplicates(int[] nums) {
+        int i = 0 ;
+        for(int j = 1; j < nums.length; j++){
+            if(nums[i] != nums[j]){
+                i++;
+                nums[i] = nums[j];
             }
         }
-        return -1;
+        return i;
+    }
+    public static void main(String[] args){
+        int nums[] ={1,1,2,2,3,4,5};
+        int re = removeDuplicates(nums);
+        System.out.println(re);
     }
 }
