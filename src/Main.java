@@ -1,23 +1,33 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Collections;
 
-// 1929. Concatenation of Array LeetCode
+//1431. Kids With the Greatest Number of Candies
 public class Main{
-    public int[] getConcatenation(int[] nums){
-        int []arr = new int[nums.length*2];
-        for(int i = 0 ; i < nums.length ; i++){
-            arr[i] = nums[i];
-            arr[i+nums.length] = nums[i];
+    public static ArrayList<Boolean> array(int []candies , int extra_candies ){
+        int max_candies = 0 ;
+        ArrayList<Boolean> List = new ArrayList<>();
+        for(int i =0 ; i < candies.length ; i++){
+            if(candies[i] > max_candies){
+                max_candies = candies[i];
+            }
+
         }
-        return arr;
+        for(int i = 0 ; i < candies.length ; i++){
+            if(max_candies> candies[i]+extra_candies){
+                List.add(true);
+            }
+            else{
+                List.add(false);
+            }
+        }
+        return List;
     }
     public static void main(String[] args){
-        Main g1 = new Main();
-        int arr[]={1,2,3,4,5,6,7};
-        int arr1[] = g1.getConcatenation(arr);
-        for(int i = 0 ; i < arr1.length ; i++){
-            System.out.println(arr1[i]);
-        }
+        ArrayList<Boolean> List = new ArrayList<>();
+        int[] candies = {1,2,3,4,5};
+        int extra_candies = 2;
+        List = array(candies , extra_candies);
+        System.out.println(List);
 
     }
 }
