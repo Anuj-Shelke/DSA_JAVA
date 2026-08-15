@@ -1,32 +1,18 @@
-//1365. How Many Numbers Are Smaller Than the Current Number
-public class Main{
-    public static int[] smallerNumbersThanCurrent(int[] nums) {
-        int []arr = new int[nums.length];
-
-
-        for(int i = 0 ; i < nums.length ; i++){
-            int count = 0;
-            for(int j = 0 ; j < nums.length ; j++){
-
-                if(nums[i]>nums[j]){
-                    count++;
-
-                }
-                else{
-                    continue;
-                }
-                arr[i] = count;
-
+//704. Binary Search
+public class Main {
+    public int search(int[] nums, int target) {
+        int start=0;
+        int end=nums.length-1;
+        while(start<=end){
+            int mid=start+(end-start)/2;
+            if(nums[mid]==target){
+                return mid;
+            }else if(target<nums[mid]){
+                end=mid-1;
+            }else{
+                start=mid+1;
             }
-
         }
-        return arr;
-    }
-    public static void main(String[] args){
-        int[] arr ={1,2,3,4,5};
-        int[] arr_1 = smallerNumbersThanCurrent(arr);
-        for(int i = 0 ; i < arr_1.length ; i++){
-            System.out.println(arr_1[i]);
-        }
+        return -1;
     }
 }
