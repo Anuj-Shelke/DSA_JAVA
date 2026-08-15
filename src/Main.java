@@ -1,33 +1,32 @@
-import java.util.ArrayList;
-import java.util.Collections;
-
-//1431. Kids With the Greatest Number of Candies
+//1365. How Many Numbers Are Smaller Than the Current Number
 public class Main{
-    public static ArrayList<Boolean> array(int []candies , int extra_candies ){
-        int max_candies = 0 ;
-        ArrayList<Boolean> List = new ArrayList<>();
-        for(int i =0 ; i < candies.length ; i++){
-            if(candies[i] > max_candies){
-                max_candies = candies[i];
+    public static int[] smallerNumbersThanCurrent(int[] nums) {
+        int []arr = new int[nums.length];
+
+
+        for(int i = 0 ; i < nums.length ; i++){
+            int count = 0;
+            for(int j = 0 ; j < nums.length ; j++){
+
+                if(nums[i]>nums[j]){
+                    count++;
+
+                }
+                else{
+                    continue;
+                }
+                arr[i] = count;
+
             }
 
         }
-        for(int i = 0 ; i < candies.length ; i++){
-            if(max_candies> candies[i]+extra_candies){
-                List.add(true);
-            }
-            else{
-                List.add(false);
-            }
-        }
-        return List;
+        return arr;
     }
     public static void main(String[] args){
-        ArrayList<Boolean> List = new ArrayList<>();
-        int[] candies = {1,2,3,4,5};
-        int extra_candies = 2;
-        List = array(candies , extra_candies);
-        System.out.println(List);
-
+        int[] arr ={1,2,3,4,5};
+        int[] arr_1 = smallerNumbersThanCurrent(arr);
+        for(int i = 0 ; i < arr_1.length ; i++){
+            System.out.println(arr_1[i]);
+        }
     }
 }
