@@ -1,19 +1,26 @@
-public class Main {
-    public int lengthOfLastWord(String s) {
-        int i = s.length() - 1;
-        int count = 0;
+import java.util.Scanner;
 
-        // Step 1: Skip trailing spaces
-        while (i >= 0 && s.charAt(i) == ' ') {
-            i--;
+public class Main{
+    public static int pali(int num) {
+        int temp = 0 ;
+        int dum = num;
+        while (dum > 0) {
+           temp = temp*10+dum%10;
+           dum = dum/10;
+
         }
-
-        // Step 2: Count characters of the last word
-        while (i >= 0 && s.charAt(i) != ' ') {
-            count++;
-            i--;
+        return temp;
+    }
+    public static void main(String[] args){
+        System.out.println("Enter the number to check if it is palindrome");
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = pali(a);
+        if(a == b){
+            System.out.println("The number is a palindrome");
         }
-
-        return count;
+        else{
+            System.out.println("Not a pali ");
+        }
     }
 }
