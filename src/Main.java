@@ -1,18 +1,19 @@
-//26. Remove Duplicates from Sorted Array
 public class Main {
-    public static int removeDuplicates(int[] nums) {
-        int i = 0 ;
-        for(int j = 1; j < nums.length; j++){
-            if(nums[i] != nums[j]){
-                i++;
-                nums[i] = nums[j];
-            }
+    public int lengthOfLastWord(String s) {
+        int i = s.length() - 1;
+        int count = 0;
+
+        // Step 1: Skip trailing spaces
+        while (i >= 0 && s.charAt(i) == ' ') {
+            i--;
         }
-        return i;
-    }
-    public static void main(String[] args){
-        int nums[] ={1,1,2,2,3,4,5};
-        int re = removeDuplicates(nums);
-        System.out.println(re);
+
+        // Step 2: Count characters of the last word
+        while (i >= 0 && s.charAt(i) != ' ') {
+            count++;
+            i--;
+        }
+
+        return count;
     }
 }
