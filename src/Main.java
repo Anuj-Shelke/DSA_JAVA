@@ -1,26 +1,19 @@
 import java.util.Scanner;
 
 public class Main{
-    public static int pali(int num) {
-        int temp = 0 ;
-        int dum = num;
-        while (dum > 0) {
-           temp = temp*10+dum%10;
-           dum = dum/10;
-
-        }
-        return temp;
+    public static boolean ispali(String s) {
+        s = s.replaceAll("[^a-zA-Z0-9]","");
+        s = s.toLowerCase();
+        String rev = new StringBuilder(s).reverse().toString();
+        return s.equals(rev);
     }
     public static void main(String[] args){
-        System.out.println("Enter the number to check if it is palindrome");
+        System.out.println("Enter String to check if it is a Palindrome");
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = pali(a);
-        if(a == b){
-            System.out.println("The number is a palindrome");
-        }
-        else{
-            System.out.println("Not a pali ");
-        }
+        String name = sc.nextLine();
+        boolean result = ispali(name);
+        System.out.println(result);
+
+
     }
 }
