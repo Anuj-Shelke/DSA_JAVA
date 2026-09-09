@@ -1,31 +1,19 @@
 import java.util.*;
 public class Main{
-    public static void main(String[] args){
-        int found = 0;
-        int [] arr = {1,2,3,4,5,6};
-        System.out.println("Enter the element to search for ");
-        Scanner sc = new Scanner(System.in);
-        int element = sc.nextInt();
-        int end = arr.length-1;
-        int start = 0 ;
-        while(end>= start){
-            int mid = (end+start)/2;
-            if(arr[mid] == element ){
-                System.out.printf("The element is found at index %d",mid);
-                found = 1;
-                break;
-
-            }
-            else if(arr[mid] < element){
-                start = mid+1;
-            }
-            else{
-                end = mid-1;
+    public static void main(String[] args) {
+        int [] arr = {6,5,4,3,2,1,9};
+        for(int i = 0 ; i < arr.length-1; i++){
+            for(int j = 0 ; j < arr.length-i-1 ; j++){
+                if(arr[j+1] < arr[j]){
+                    int temp = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = temp;
+                }
             }
         }
-        if(found == 0){
-            System.out.println("The element is not their  ");
+        System.out.println("The sorted Array is : ");
+        for(int i = 0 ; i < arr.length ; i++){
+            System.out.print(" "+arr[i]);
         }
     }
-
 }
