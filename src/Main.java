@@ -1,19 +1,20 @@
-import java.util.*;
-public class Main{
+public class Main {
     public static void main(String[] args) {
-        int [] arr = {6,5,4,3,2,1,9};
-        for(int i = 0 ; i < arr.length-1; i++){
-            for(int j = 0 ; j < arr.length-i-1 ; j++){
-                if(arr[j+1] < arr[j]){
-                    int temp = arr[j+1];
-                    arr[j+1] = arr[j];
-                    arr[j] = temp;
-                }
+        int key  = 0 ;
+        int[] arr = {1, 6, 5, 4, 3, 2, 2};
+        int n = arr.length;
+        for(int i = 1 ; i < n; i++){
+            key = arr[i];
+            int j = i-1;
+            while(j >= 0 && arr[j] > key ){
+                arr[j+1] = arr[j];
+                j--;
+
             }
+            arr[j+1] = key ;
         }
-        System.out.println("The sorted Array is : ");
-        for(int i = 0 ; i < arr.length ; i++){
-            System.out.print(" "+arr[i]);
+        for (int j : arr) {
+            System.out.printf("%d ",j);
         }
     }
 }
