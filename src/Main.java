@@ -1,20 +1,25 @@
-public class Main {
-    public static void main(String[] args) {
-        int key  = 0 ;
-        int[] arr = {1, 6, 5, 4, 3, 2, 2};
-        int n = arr.length;
-        for(int i = 1 ; i < n; i++){
-            key = arr[i];
-            int j = i-1;
-            while(j >= 0 && arr[j] > key ){
-                arr[j+1] = arr[j];
-                j--;
+public class Main{
+    public static void message(){
+        System.out.println("Hello World 0 ");
+        message1();
+    }
+    public static void message1(){
+        System.out.println("Hello World 1 ");
+        message2();
+    }
+    public static void message2(){
+        System.out.println("Hello World 2 ");
+        message3();
+    }
+    public static void message3(){
+        System.out.println("Hello World 3 ");
+        message4();
+    }
+    public static void message4(){
+        System.out.println("Hello World 4 ");
 
-            }
-            arr[j+1] = key ;
-        }
-        for (int j : arr) {
-            System.out.printf("%d ",j);
-        }
+    }
+    public static void main(String[] args){
+        message();
     }
 }
